@@ -1,0 +1,87 @@
+" ************************************************************************
+"  .vimrc
+"    Vimの機能を設定します。
+"
+"  @author sbkro
+"  @date   2012/11/10
+" ************************************************************************
+
+" ************************************************************************
+"  Basic Settnigs
+" ************************************************************************
+
+" 縦幅
+set columns=100
+
+" 行数
+set lines=35
+" 検索をファイルの先頭へループしない
+set nowrapscan
+
+" タブのサイズ
+set tabstop=4
+
+" 行数を表示する
+set number
+
+" バックアップを作成しない
+set nobackup
+
+" カーソル行をハイライト
+set cursorline
+
+" 不可視文字を標示する
+set list
+set listchars=tab:»-,trail:-,eol:^,extends:»,precedes:«,nbsp:
+
+" タブをスペースに展開しない (expandtab:展開する)
+set noexpandtab
+
+" ;でコマンド入力( ;と:を入れ替)
+noremap ; :
+noremap : ;
+
+" Ctrl-iでヘルプ
+nnoremap :help
+
+" カーソル下のキーワードをヘルプでひく
+nnoremap :help
+
+
+" ************************************************************************
+"  Settings for char code
+" ************************************************************************
+set enc=utf-8
+set fenc=utf-8
+set fencs=iso-2022-jp,utf-8,euc-jp,cp932
+
+" ************************************************************************
+"  Setting for search
+" ************************************************************************
+"Escの2回押しでハイライト消去
+nmap ;nohlsearch
+
+
+" ************************************************************************
+"  Setting for File IO
+" ************************************************************************
+
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+
+
+" ************************************************************************
+"  Setting for neocomplcache
+" ************************************************************************
+let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+
+highlight CursorLine ctermbg=black guibg=black
+
+"<C-Space>でomni補完
+imap <C-Space> <C-x><C-o>
+
+"Rubyのオムニ補完を設定(ft-ruby-omni)
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+

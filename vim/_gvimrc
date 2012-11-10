@@ -1,0 +1,51 @@
+" ************************************************************************
+"  .gvimrc
+"    Vimの見た目を設定します。
+"
+"  @author sbkro
+"  @date   2012/11/10
+" ************************************************************************
+
+" ************************************************************************
+" Setting for MacVim
+" ************************************************************************
+if has('gui_macvim')
+  " タブを常に表示
+  set showtabline=2
+
+  " 透明度
+  set transparency=10
+
+  " ツールバー非表示
+  set guioptions-=T
+
+  " アンチエイリアス
+  set antialias
+
+  " IMEをOFFにする。
+  set imdisable
+
+  " フォント設定
+  set guifontwide=Osaka:h14
+  set guifont=Osaka-Mono:h16
+endif
+
+
+" ************************************************************************
+" fullscreen mode
+" ************************************************************************
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  au GUIEnter * set fullscreen
+endif
+
+
+" ************************************************************************
+" Color settings
+" ************************************************************************
+if !exists("colors_name")
+    " Use the macvim color scheme by default
+    "colorscheme macvim
+    colorscheme wombat
+endif
+
