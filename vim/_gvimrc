@@ -22,28 +22,16 @@ if has('gui_macvim')
   " アンチエイリアス
   set antialias
 
-  " IMEをOFFにする。
-  set imdisable
-
   " フォント設定
-  set guifontwide=Osaka:h14
+  set guifontwide=Osaka:h16
   set guifont=Osaka-Mono:h16
-endif
-
-
-" ************************************************************************
-" fullscreen mode
-" ************************************************************************
-if has("gui_running")
-  set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
 endif
 
 
 " ************************************************************************
 " Color settings
 " ************************************************************************
-if !exists("colors_name")
+if exists("colors_name")
     " Use the macvim color scheme by default
     "colorscheme macvim
     colorscheme wombat
