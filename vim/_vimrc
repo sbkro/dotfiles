@@ -35,6 +35,30 @@ set listchars=tab:»-,trail:-,eol:^,extends:»,precedes:«,nbsp:
 " タブをスペースに展開しない (expandtab:展開する)
 set noexpandtab
 
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+
+
+"************************************************************************
+"  Settings for NeoBundle
+" ************************************************************************
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'Flake8-vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/neocomplete'
+
+NeoBundleCheck
+
 
 " ************************************************************************
 "  Settings for character code
@@ -43,27 +67,6 @@ set enc=utf-8
 set fenc=utf-8
 set fencs=iso-2022-jp,utf-8,euc-jp,cp932
 
-
-" ************************************************************************
-"  Setting for File IO
-" ************************************************************************
-
-" 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
-
-
-" ************************************************************************
-"  Setting for neocomplcache
-" ************************************************************************
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-
-highlight CursorLine ctermbg=black guibg=black
-
-d
-"Rubyのオムニ補完を設定(ft-ruby-omni)
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
 
 " ************************************************************************
 "  Setting for complementation
@@ -78,3 +81,45 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+
+
+" ************************************************************************
+"  Color Setting for CUI
+" ************************************************************************
+syntax enable
+set background=dark
+colorscheme solarized
+
+
+"************************************************************************
+"  Settings for Flake8
+" ************************************************************************
+"保存時に自動でチェック
+let g:PyFlakeOnWrite = 1
+
+"解析種別を設定
+let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+
+"McCabe複雑度の最大値
+let g:PyFlakeDefaultComplexity=10
+
+"visualモードでQを押すと自動で修正
+let g:PyFlakeRangeCommand = 'Q'
+
+
+" ************************************************************************
+"  Settings for Unite
+" ************************************************************************
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,ui :<C-u>Unite file<CR>
+
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1

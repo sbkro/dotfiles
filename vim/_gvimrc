@@ -29,11 +29,8 @@ endif
 
 
 " ************************************************************************
-" Color settings
+" Color Settings
 " ************************************************************************
-if exists("colors_name")
-    " Use the macvim color scheme by default
-    "colorscheme macvim
-    colorscheme wombat
-endif
-
+syntax enable
+set background=dark
+colorscheme solarized
