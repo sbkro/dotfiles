@@ -38,6 +38,11 @@ set noexpandtab
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
 
+" インクリメンタルサーチ
+set incsearch
+
+" Disabled undo file
+set noundofile
 
 "************************************************************************
 "  Settings for NeoBundle
@@ -56,6 +61,8 @@ NeoBundle 'Flake8-vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'tpope/vim-fugitive'
 
 NeoBundleCheck
 
@@ -94,16 +101,9 @@ colorscheme solarized
 "************************************************************************
 "  Settings for Flake8
 " ************************************************************************
-"保存時に自動でチェック
 let g:PyFlakeOnWrite = 1
-
-"解析種別を設定
 let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
-
-"McCabe複雑度の最大値
 let g:PyFlakeDefaultComplexity=10
-
-"visualモードでQを押すと自動で修正
 let g:PyFlakeRangeCommand = 'Q'
 
 
@@ -121,5 +121,14 @@ nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> ,ui :<C-u>Unite file<CR>
 
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
+
+let g:indentLine_char = '|'
+
+
+" ************************************************************************
+"  Settings for Lightline
+" ************************************************************************
+let g:lightline = {
+    \'colorscheme': 'solarized',
+    \}
+
