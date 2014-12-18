@@ -42,3 +42,6 @@ set noundofile
 set enc=utf-8
 set fenc=utf-8
 set fencs=iso-2022-jp,utf-8,euc-jp,cp932
+
+" ステータスラインを常に表示させる。
+set laststatus=2
