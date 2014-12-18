@@ -12,6 +12,10 @@ set nowrapscan
 
 " タブのサイズ
 set tabstop=4
+set shiftwidth=4
+set softtabstop=2
+set autoindent
+set smartindent
 
 " 行数を表示する
 set number
@@ -45,3 +49,4 @@ set fencs=iso-2022-jp,utf-8,euc-jp,cp932
 
 " ステータスラインを常に表示させる。
 set laststatus=2
+
