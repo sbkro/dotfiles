@@ -50,3 +50,5 @@ set fencs=iso-2022-jp,utf-8,euc-jp,cp932
 " ステータスラインを常に表示させる。
 set laststatus=2
 
+" File Type
+au BufRead,BufNewFile *.md set filetype=markdown

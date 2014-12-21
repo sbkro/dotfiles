@@ -22,6 +22,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/DirDiff.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'taku-o/vim-toggle'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 
 NeoBundleCheck
