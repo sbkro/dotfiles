@@ -1,4 +1,4 @@
-# Basic Settings
+### Basic Settings
 export LANG="ja_JP.UTF-8"
 export LESSCHARSET=utf-8
 export TERM=xterm-256color
@@ -10,32 +10,34 @@ case ${OSTYPE} in
 		;;
 esac
 
-# keybind
-#  -e: Emacs like
-#  -v: Vi like
+### Keybind Settins
+# Keybind mode (e: emacs, v: vi)
 bindkey -e
 
-# Enable auto-complate.
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
+
+### Enable auto-complate.
 autoload -U compinit; compinit
 
-# Color Settings
+### Color Settings
 autoload colors
 colors
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Enable auto-pushd.
+### Enable auto-pushd.
 setopt auto_cd
 alias ...='cd ../..'
 alias ....='cd ../../..'
 setopt auto_pushd
 setopt pushd_ignore_dups
 
-# Enable glob
+### Enable glob
 setopt extended_glob
 
-# Settings for History
+### Settings for History
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
@@ -43,7 +45,15 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 zstyle ':completion:*:default' menu select=1
 
-# Path Settings
+### Settings for cdr
+autoload -Uz add-zsh-hook
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook chpwd chpwd_recent_dirs
+
+### Settins for zmv
+autoload -Uz zmv
+
+### Path Settings
 case ${OSTYPE} in
 	darwin*)
 		# Settings for OSX
@@ -54,7 +64,7 @@ case ${OSTYPE} in
 		;;
 esac
 
-# Alias Settings
+### Alias Settings
 alias ls="ls -vFG"
 alias ll="ls -lvFG"
 alias m2u="tr '\015' '\012'"
@@ -65,6 +75,7 @@ alias javac="javac -J-Dfile.encoding=UTF8"
 alias java="java -Dfile.encoding=UTF8"
 alias less="less -r"
 alias more="more -r"
+alias p='popd'
 case ${OSTYPE} in
 	darwin*)
 		# Settings for OSX
@@ -77,10 +88,10 @@ case ${OSTYPE} in
 		;;
 esac
 
-# Private Settings
+### Private Settings
 if [ -e "$HOME/.zshenv_local" ]; then
 	source "$HOME/.zshenv_local"
 fi
 
-# Launch tmux
+### Launch tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
