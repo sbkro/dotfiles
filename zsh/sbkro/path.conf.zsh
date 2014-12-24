@@ -8,6 +8,7 @@
 case ${OSTYPE} in
 	darwin*)
 		export PATH=~/bin:$PATH
+		export PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH
 		;;
 	linux*)
 		;;

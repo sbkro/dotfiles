@@ -26,5 +26,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
+if has ("mac")
+    NeoBundle 'toyamarinyon/vim-swift'
+endif
 
 NeoBundleCheck
