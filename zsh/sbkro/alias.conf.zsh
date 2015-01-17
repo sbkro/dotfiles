@@ -17,6 +17,7 @@ alias p='popd'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias vf="vi +VimFiler"
+alias tree="tree --charset='x'"
 
 ### Settings of OS-dependent
 case ${OSTYPE} in
