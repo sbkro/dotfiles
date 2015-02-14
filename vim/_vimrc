@@ -1,2 +1,12 @@
+" -----------------------------------------------------------------------------
+"  _vimrc
+" -----------------------------------------------------------------------------
+
+""" Load config files.
 set runtimepath+=~/.vim
 runtime! userautoload/*.vim
+
+""" Load local config file.
+if filereadable(expand("~/.vimrc_local"))
+    source ~/.vimrc_local
+endif
