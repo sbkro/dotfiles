@@ -13,7 +13,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " 以下に、パッケージ名を記述する
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'Flake8-vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
