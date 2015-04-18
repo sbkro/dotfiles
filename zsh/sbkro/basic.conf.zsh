@@ -29,7 +29,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 ### Settings of OS-dependent
 case ${OSTYPE} in
 	darwin*)
-		export SHELL=/usr/local/bin/zsh
+		export SHELL=`which zsh`
 		;;
 	linux*)
 		;;
