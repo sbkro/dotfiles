@@ -20,8 +20,8 @@ if has('gui_macvim')
   set antialias
 
   " フォント設定
-  set guifontwide=Ricty:h16
-  set guifont=Ricty:h16
+  set guifontwide=Ricty:h14
+  set guifont=Ricty:h14
 endif
 
 
