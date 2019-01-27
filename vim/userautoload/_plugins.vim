@@ -24,6 +24,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'plasticboy/vim-markdown'
   NeoBundle 'kannokanno/previm'
   NeoBundle 'tyru/open-browser.vim'
+  NeoBundle 'leafgarland/typescript-vim'
+  NeoBundle 'jason0x43/vim-js-indent'
+  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'Quramy/tsuquyomi'
 
   if has ("mac")
       NeoBundle 'toyamarinyon/vim-swift'
