@@ -1,37 +1,33 @@
 " ---------------------------------------------------------
 "  _plugins.vim
-"    プラグイン管理の設定を格納。（NeoBundleを利用）
+"    プラグイン管理の設定を格納。（dein.vimを利用）
 " ---------------------------------------------------------
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-  NeoBundle 'davidhalter/jedi-vim'
-  NeoBundle 'itchyny/lightline.vim'
-  NeoBundle 'Flake8-vim'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/vimfiler'
-  NeoBundle 'Yggdroot/indentLine'
-  NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'vim-scripts/DirDiff.vim'
-  NeoBundle 'tomtom/tcomment_vim'
-  NeoBundle 'taku-o/vim-toggle'
-  NeoBundle 'godlygeek/tabular'
-  NeoBundle 'plasticboy/vim-markdown'
-  NeoBundle 'kannokanno/previm'
-  NeoBundle 'tyru/open-browser.vim'
-  NeoBundle 'leafgarland/typescript-vim'
-  NeoBundle 'jason0x43/vim-js-indent'
-  NeoBundle 'Shougo/vimproc'
-  NeoBundle 'Quramy/tsuquyomi'
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-  if has ("mac")
-      NeoBundle 'toyamarinyon/vim-swift'
-  endif
-call neobundle#end()
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-NeoBundleCheck
+    call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif

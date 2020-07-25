@@ -29,9 +29,7 @@ done
 s_link _gvimrc ~/.gvimrc
 s_link _vimrc  ~/.vimrc
 s_link userautoload ~/.vim/userautoload
-
-# setup neobundle
-git clone https://github.com/Shougo/neobundle.vim ${VIM_BUNDLE}/neobundle.vim
+s_link rc ~/.vim/rc
 
 # setup solarized
 git clone git://github.com/altercation/vim-colors-solarized.git ${VIM_COLORS}/tmp
