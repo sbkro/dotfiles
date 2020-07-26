@@ -38,34 +38,3 @@ repo = 'Shougo/vimproc'
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
-
-# ------------------------------------------------
-# for Markdown
-# ------------------------------------------------
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-
-[[plugins]]
-repo = 'kannokanno/previm'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
-
-# ------------------------------------------------
-# for Python
-# ------------------------------------------------
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-
-[[plugins]]
-repo = 'vim-scripts/Flake8-vim'
-
-# ------------------------------------------------
-# for TypeScript
-# ------------------------------------------------
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
-repo = 'Quramy/tsuquyomi'

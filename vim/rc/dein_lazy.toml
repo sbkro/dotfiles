@@ -1,0 +1,37 @@
+# ------------------------------------------------
+# for Markdown
+# ------------------------------------------------
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown', 'md']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown', 'md']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown', 'md']
+
+
+# ------------------------------------------------
+# for Python
+# ------------------------------------------------
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['py', 'python']
+
+[[plugins]]
+repo = 'vim-scripts/Flake8-vim'
+on_ft = ['py', 'python']
+
+# ------------------------------------------------
+# for TypeScript
+# ------------------------------------------------
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
