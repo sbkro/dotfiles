@@ -35,6 +35,9 @@ repo = 'jason0x43/vim-js-indent'
 [[plugins]]
 repo = 'Shougo/vimproc'
 
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
+
 
 # ------------------------------------------------
 # for Markdown
