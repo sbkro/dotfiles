@@ -20,14 +20,6 @@ if has('gui_macvim')
   set antialias
 
   " フォント設定
-  set guifontwide=Ricty:h14
-  set guifont=Ricty:h14
+  set guifontwide=Ricty:h18
+  set guifont=Ricty:h18
 endif
-
-
-" ************************************************************************
-" Color Settings
-" ************************************************************************
-syntax enable
-set background=dark
-colorscheme solarized
