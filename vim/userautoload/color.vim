@@ -5,4 +5,5 @@
 
 syntax enable
 set background=dark
-colorscheme solarized
+set termguicolors
+colorscheme Tomorrow-Night-Blue
