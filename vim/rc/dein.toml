@@ -9,7 +9,8 @@ repo = 'itchyny/lightline.vim'
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo = 'Shougo/vimfiler'
+repo = 'Shougo/vimproc'
+build = 'make'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -33,8 +34,8 @@ repo = 'godlygeek/tabular'
 repo = 'jason0x43/vim-js-indent'
 
 [[plugins]]
-repo = 'Shougo/vimproc'
+repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
-repo = 'itchyny/vim-gitbranch'
+repo = 'lambdalisue/fern.vim'
 
