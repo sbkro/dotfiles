@@ -45,10 +45,10 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sbkro git vagrant history python pip gradle iterm2 node npm rsync tmux)
+plugins=(sbkro git vagrant history python pip gradle iterm2 node npm rsync tmux docker github docker-compose)
 case ${OSTYPE} in
     darwin*)
-        plugins=(${plugins} osx brew xcode vscode)
+        plugins=(${plugins} macos brew xcode vscode)
         ;;
     linux*)
         plugins=(${plugins})
